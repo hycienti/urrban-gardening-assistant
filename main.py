@@ -22,3 +22,17 @@ def welcome():
     print("Welcome to the Urban Gardening Assistant!")
     print("This tool will help you choose plants suitable for urban spaces and provide gardening tips.")
     print("Please follow the instructions to navigate through the options.\n")
+
+def print_menu():
+    print("\nMain Menu")
+    print("1. Enter Gardening Preferences")
+    print("2. Get Plant Recommendations")
+    print("3. View Plant Care Instructions")
+    print("4. Gardening Tips")
+    print("5. Community Tips")
+    print("6. View Favorites")
+    print("7. Exit")
+
+# Call the function to print the menu
+print_menu()
+    

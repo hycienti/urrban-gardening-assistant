@@ -33,8 +33,6 @@ def print_menu():
     print("6. View Favorites")
     print("7. Exit")
 
-# Call the function to print the menu
-print_menu()
 
 def plant_recommendations():
     print("\nPlant Recommendations:\n")

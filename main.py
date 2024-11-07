@@ -33,8 +33,6 @@ def print_menu():
     print("6. View Favorites")
     print("7. Exit")
 
-# Call the function to print the menu
-print_menu()
 
 <<<<<<< HEAD
 #function of getting user preferences
@@ -77,4 +75,22 @@ def gardening_tips():
     print("3. Choose soil types based on the plant requirements for best results.")
     print("4. Consider container gardening if you have limited space.")
     print("5. Use compost to enrich your soil for sustainable gardening.\n")
+<<<<<<< HEAD
 >>>>>>> e6f5fe5f9dfa591386b6227864c2d69a199b01d9
+=======
+
+def plant_care_instructions():
+    plant_name = input(
+        "\nEnter the name of the plant to view care instructions: ").capitalize()
+    for plant_list in plants_data.values():
+        for plant in plant_list:
+            if plant["name"].lower() == plant_name.lower():
+                print(f"\nCare Instructions for {plant['name']}:")
+                print(f"  - Sunlight: {plant['sunlight']}")
+                print(f"  - Water: {plant['water']}")
+                print(f"  - Soil: {plant['soil']}")
+                print(f"  - Common Pests: {plant['pests']}")
+                return
+    print("Plant not found. Please check the spelling or try another plant.")
+    
+>>>>>>> 44630ecc3001573bfd4f4726d6993011fa901fea

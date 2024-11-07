@@ -35,13 +35,13 @@ def welcome():
 
 def print_menu():
     print("\nMain Menu:")
-    print("1. Set Gardening Preferences")
-    print("2. Plant Recommendations")
-    print("3. Plant Care Instructions")
-    print("4. General Gardening Tips")
-    print("5. Community Tips")
-    print("6. View Favorites")
-    print("7. Exit")
+    print("1. Set Gardening Preferences- ")
+    print("2. Plant Recommendations- ")
+    print("3. Plant Care Instructions- ")
+    print("4. General Gardening Tips- ")
+    print("5. Community Tips- ")
+    print("6. View Favorites- ")
+    print("7. Exit- ")
 
 
 def main_menu():
@@ -109,10 +109,10 @@ def gardening_tips():
 
 def community_tips():
     print("\nCommunity Tips:\n")
-    print("1. Use coffee grounds as a natural fertilizer.")
-    print("2. Place plants with similar water needs together to simplify watering.")
-    print("3. Collect rainwater to water plants and reduce water usage.")
-    print("4. Plant pollinator-friendly flowers to support local bees and butterflies.\n")
+    print("1. **Use coffee grounds as a natural fertilizer**.")
+    print("2. **Place plants with similar water needs together to simplify watering.**")
+    print("3. **Collect rainwater to water plants and reduce water usage.**")
+    print("4. **Plant pollinator-friendly flowers to support local bees and butterflies.**\n")
 
 def add_to_favorites(plant):
     add_fav = input(f"Do you want to add {plant['name']} to your favorites? (y/n): ").lower()
@@ -129,7 +129,8 @@ def view_favorites():
             print(f"- {plant['name']} ({plant['sunlight']})")
 
 def exit_program():
-    print("\nThank you for using the Urban Gardening Assistant! Happy Gardening!")
+    print("\nThank you for using ")
+    print("the Urban Gardening Assistant! Happy Gardening!")
     sys.exit()
 
 # Start the application

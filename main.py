@@ -17,3 +17,8 @@ plants_data = {
         {"name": "Echeveria", "sunlight": "Partial Shade", "water": "Once a week", "soil": "Well-drained", "pests": "None"}
     ]
 }
+
+def welcome():
+    print("Welcome to the Urban Gardening Assistant!")
+    print("This tool will help you choose plants suitable for urban spaces and provide gardening tips.")
+    print("Please follow the instructions to navigate through the options.\n")

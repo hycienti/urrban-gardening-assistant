@@ -18,6 +18,14 @@ plants_data = {
     ]
 }
 
+# User preferences storage
+user_preferences = {
+    "sunlight": "",
+    "space": "",
+    "plant_type": "",
+    "favorites": []
+}
+
 def welcome():
     print("Welcome to the Urban Gardening Assistant!")
     print("This tool will help you choose plants suitable for urban spaces and provide gardening tips.")

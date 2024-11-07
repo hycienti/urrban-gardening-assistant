@@ -129,9 +129,13 @@ def view_favorites():
             print(f"- {plant['name']} ({plant['sunlight']})")
 
 def exit_program():
-    print("\nThank you for using ")
-    print("the Urban Gardening Assistant! Happy Gardening!")
-    sys.exit()
+    confirm = input("Are you sure you want to exit? (y/n): ").lower()
+    if confirm == 'y':
+        print("Thank you for using the Urban Gardening Assistant!")
+        sys.exit()
+    else:
+        print("Returning to main menu.")
+
 
 # Start the application
 welcome()

@@ -44,8 +44,9 @@ def plant_recommendations():
             if plant["sunlight"] == user_preferences["sunlight"]:
                 print(f"Plant: {plant['name']}, Ideal for {user_preferences['sunlight']}")
                 add_to_favorites(plant)
-else:
+    else:
         print("No recommendations available. Please check your preferences or select a different plant type.")
+
 def gardening_tips():
     print("\nGeneral Gardening Tips:\n")
     print("1. Maximize space with vertical gardening or hanging pots.")

@@ -52,3 +52,18 @@ def gardening_tips():
     print("3. Choose soil types based on the plant requirements for best results.")
     print("4. Consider container gardening if you have limited space.")
     print("5. Use compost to enrich your soil for sustainable gardening.\n")
+
+def plant_care_instructions():
+    plant_name = input(
+        "\nEnter the name of the plant to view care instructions: ").capitalize()
+    for plant_list in plants_data.values():
+        for plant in plant_list:
+            if plant["name"].lower() == plant_name.lower():
+                print(f"\nCare Instructions for {plant['name']}:")
+                print(f"  - Sunlight: {plant['sunlight']}")
+                print(f"  - Water: {plant['water']}")
+                print(f"  - Soil: {plant['soil']}")
+                print(f"  - Common Pests: {plant['pests']}")
+                return
+    print("Plant not found. Please check the spelling or try another plant.")
+    

@@ -63,7 +63,6 @@ urban-gardening-assistant/
 ```
 
 - **main.py**: The core application logic, including user interaction, plant recommendations, and care instructions.
-- **plants_data.json**: JSON file with data for different plant types, sunlight requirements, and care instructions.
 
 ## Functionality
 

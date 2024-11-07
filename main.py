@@ -36,3 +36,10 @@ def print_menu():
 # Call the function to print the menu
 print_menu()
     
+def gardening_tips():
+    print("\nGeneral Gardening Tips:\n")
+    print("1. Maximize space with vertical gardening or hanging pots.")
+    print("2. Use eco-friendly pest control methods like neem oil or soapy water.")
+    print("3. Choose soil types based on the plant requirements for best results.")
+    print("4. Consider container gardening if you have limited space.")
+    print("5. Use compost to enrich your soil for sustainable gardening.\n")

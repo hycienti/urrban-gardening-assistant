@@ -1,4 +1,4 @@
-# Sample data for plants and their care instructions
+i# Sample data for plants and their care instructions
 plants_data = {
     "Flowers": [
         {"name": "Marigold", "sunlight": "Full Sun", "water": "Once a day", "soil": "Well-drained", "pests": "Aphids"},
@@ -35,4 +35,25 @@ def print_menu():
 
 # Call the function to print the menu
 print_menu()
+
+#function of getting user preferences
+
+def get_user_preferences():
+    print("\nEnter your gardening preferences:\n")
     
+    # Get sunlight preference
+    user_preferences['sunlight'] = input("Amount of sunlight (Full Sun, Partial Shade, Shade): ").capitalize()
+    
+    # Get space preference
+    user_preferences['space'] = input("Type of space (Balcony, Windowsill, Rooftop, Indoor): ").capitalize()
+    
+    # Get plant type preference
+    user_preferences['plant_type'] = input("Preferred plant types (Flowers, Herbs, Vegetables, Succulents): ").capitalize()
+    
+    print("Preferences saved!")
+
+# Example of how these functions might be called
+welcome()
+print_menu()
+get_user_preferences()
+print("Your preferences:", user_preferences)   

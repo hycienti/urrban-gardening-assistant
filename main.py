@@ -33,16 +33,20 @@ def welcome():
     print("This tool will help you choose plants suitable for urban spaces and provide gardening tips.")
     print("Please follow the instructions to navigate through the options.\n")
 
+def print_menu():
+    print("\nMain Menu:")
+    print("1. Set Gardening Preferences")
+    print("2. Plant Recommendations")
+    print("3. Plant Care Instructions")
+    print("4. General Gardening Tips")
+    print("5. Community Tips")
+    print("6. View Favorites")
+    print("7. Exit")
+
+
 def main_menu():
     while True:
-        print("\nMain Menu")
-        print("1. Enter Gardening Preferences")
-        print("2. Get Plant Recommendations")
-        print("3. View Plant Care Instructions")
-        print("4. Gardening Tips")
-        print("5. Community Tips")
-        print("6. View Favorites")
-        print("7. Exit")
+        print_menu()
         choice = input("Select an option (1-7): ")
         
         if choice == '1':
@@ -61,6 +65,8 @@ def main_menu():
             exit_program()
         else:
             print("Invalid choice, please enter a number between 1 and 7.")
+
+
 
 def get_user_preferences():
     print("\nEnter your gardening preferences:\n")

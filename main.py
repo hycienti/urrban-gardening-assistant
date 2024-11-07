@@ -36,6 +36,7 @@ def print_menu():
 # Call the function to print the menu
 print_menu()
 
+<<<<<<< HEAD
 #function of getting user preferences
 
 def get_user_preferences():
@@ -57,3 +58,23 @@ welcome()
 print_menu()
 get_user_preferences()
 print("Your preferences:", user_preferences)   
+=======
+def plant_recommendations():
+    print("\nPlant Recommendations:\n")
+    plant_type = user_preferences['plant_type']
+    if plant_type and plant_type in plants_data:
+        for plant in plants_data[plant_type]:
+            if plant["sunlight"] == user_preferences["sunlight"]:
+                print(f"Plant: {plant['name']}, Ideal for {user_preferences['sunlight']}")
+                add_to_favorites(plant)
+    else:
+        print("No recommendations available. Please check your preferences or select a different plant type.")
+
+def gardening_tips():
+    print("\nGeneral Gardening Tips:\n")
+    print("1. Maximize space with vertical gardening or hanging pots.")
+    print("2. Use eco-friendly pest control methods like neem oil or soapy water.")
+    print("3. Choose soil types based on the plant requirements for best results.")
+    print("4. Consider container gardening if you have limited space.")
+    print("5. Use compost to enrich your soil for sustainable gardening.\n")
+>>>>>>> e6f5fe5f9dfa591386b6227864c2d69a199b01d9

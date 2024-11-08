@@ -52,14 +52,13 @@ def welcome():
 
 def print_menu():
     print("\nMain Menu:")
-    print("1. Set Gardening Preferences- ")
-    print("2. Plant Recommendations- ")
-    print("3. Plant Care Instructions- ")
-    print("4. General Gardening Tips- ")
-    print("5. Community Tips- ")
-    print("6. View Favorites- ")
-    print("7. Exit- ")
-
+    print("1. Set Gardening Preferences")
+    print("2. Plant Recommendations")
+    print("3. Plant Care Instructions")
+    print("4. General Gardening Tips")
+    print("5. Community Tips")
+    print("6. View Favorites")
+    print("7. Exit")
 
 def main_menu():
     while True:
@@ -83,8 +82,6 @@ def main_menu():
         else:
             print("Invalid choice, please enter a number between 1 and 7.")
 
-
-
 def get_user_preferences():
     """
     Prompts the user to enter their gardening preferences for sunlight, space type, and plant types.
@@ -103,7 +100,7 @@ def get_user_preferences():
     print("Preferences saved!")
 
 def plant_recommendations():
-      """
+    """
     Provides plant recommendations based on the user's preferences.
     Displays plants that match the user's preferred type and sunlight requirement, allowing them to add plants to favorites.
     """
@@ -158,7 +155,7 @@ def community_tips():
     print("4. **Plant pollinator-friendly flowers to support local bees and butterflies.**\n")
 
 def add_to_favorites(plant):
-     """
+    """
     Prompts the user to add a plant to their list of favorites.
     If confirmed, the plant is added to the user's favorites list for easy access.
     """
@@ -168,7 +165,7 @@ def add_to_favorites(plant):
         print(f"{plant['name']} has been added to your favorites.")
 
 def view_favorites():
-     """
+    """
     Displays the user's favorite plants.
     Lists each favorite plant's name and sunlight requirement if there are any favorites saved.
     """

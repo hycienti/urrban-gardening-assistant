@@ -1,4 +1,5 @@
 import sys
+import json
 
 # Sample data for plants and their care instructions
 plants_data = {
@@ -28,6 +29,22 @@ user_preferences = {
     "favorites": []
 }
 
+# Load preferences if they exist
+def load_preferences():
+    try:
+        with open("preferences.json", "r") as file:
+            global user_preferences
+            user_preferences = json.load(file)
+            print("Loaded your saved preferences.")
+    except FileNotFoundError:
+        print("No saved preferences found. Starting fresh.")
+
+# Save user preferences
+def save_preferences():
+    with open("preferences.json", "w") as file:
+        json.dump(user_preferences, file)
+    print("Your preferences have been saved.")
+
 def welcome():
     print("Welcome to the Urban Gardening Assistant!")
     print("This tool will help you choose plants suitable for urban spaces and provide gardening tips.")
@@ -35,13 +52,13 @@ def welcome():
 
 def print_menu():
     print("\nMain Menu:")
-    print("1. Set Gardening Preferences")
-    print("2. Plant Recommendations")
-    print("3. Plant Care Instructions")
-    print("4. General Gardening Tips")
-    print("5. Community Tips")
-    print("6. View Favorites")
-    print("7. Exit")
+    print("1. Set Gardening Preferences- ")
+    print("2. Plant Recommendations- ")
+    print("3. Plant Care Instructions- ")
+    print("4. General Gardening Tips- ")
+    print("5. Community Tips- ")
+    print("6. View Favorites- ")
+    print("7. Exit- ")
 
 
 def main_menu():
@@ -73,6 +90,7 @@ def get_user_preferences():
     user_preferences['sunlight'] = input("Amount of sunlight (Full Sun, Partial Shade, Shade): ").capitalize()
     user_preferences['space'] = input("Type of space (Balcony, Windowsill, Rooftop, Indoor): ").capitalize()
     user_preferences['plant_type'] = input("Preferred plant types (Flowers, Herbs, Vegetables, Succulents): ").capitalize()
+    save_preferences()
     print("Preferences saved!")
 
 def plant_recommendations():
@@ -109,10 +127,10 @@ def gardening_tips():
 
 def community_tips():
     print("\nCommunity Tips:\n")
-    print("1. Use coffee grounds as a natural fertilizer.")
-    print("2. Place plants with similar water needs together to simplify watering.")
-    print("3. Collect rainwater to water plants and reduce water usage.")
-    print("4. Plant pollinator-friendly flowers to support local bees and butterflies.\n")
+    print("1. **Use coffee grounds as a natural fertilizer**.")
+    print("2. **Place plants with similar water needs together to simplify watering.**")
+    print("3. **Collect rainwater to water plants and reduce water usage.**")
+    print("4. **Plant pollinator-friendly flowers to support local bees and butterflies.**\n")
 
 def add_to_favorites(plant):
     add_fav = input(f"Do you want to add {plant['name']} to your favorites? (y/n): ").lower()
@@ -129,8 +147,16 @@ def view_favorites():
             print(f"- {plant['name']} ({plant['sunlight']})")
 
 def exit_program():
-    print("\nThank you for using the Urban Gardening Assistant! Happy Gardening!")
-    sys.exit()
+    confirm = input("Are you sure you want to exit? (y/n): ").lower()
+    if confirm == 'y':
+        save_preferences()
+        print("Thank you for using the Urban Gardening Assistant!")
+        sys.exit()
+    else:
+        print("Returning to main menu.")
+
+# Load preferences at the start of the application
+load_preferences()
 
 # Start the application
 welcome()

@@ -90,6 +90,11 @@ def get_user_preferences():
     user_preferences['sunlight'] = input("Amount of sunlight (Full Sun, Partial Shade, Shade): ").capitalize()
     user_preferences['space'] = input("Type of space (Balcony, Windowsill, Rooftop, Indoor): ").capitalize()
     user_preferences['plant_type'] = input("Preferred plant types (Flowers, Herbs, Vegetables, Succulents): ").capitalize()
+    # Confirm plant type existence
+    if user_preferences['plant_type'] not in plants_data:
+        print("Invalid plant type. Available options are: Flowers, Herbs, Vegetables, Succulents.")
+        return  # Return to the main menu without saving preferences
+
     save_preferences()
     print("Preferences saved!")
 

@@ -1,4 +1,5 @@
 import sys
+import json
 
 # Sample data for plants and their care instructions
 plants_data = {
@@ -27,6 +28,22 @@ user_preferences = {
     "plant_type": "",
     "favorites": []
 }
+
+# Load preferences if they exist
+def load_preferences():
+    try:
+        with open("preferences.json", "r") as file:
+            global user_preferences
+            user_preferences = json.load(file)
+            print("Loaded your saved preferences.")
+    except FileNotFoundError:
+        print("No saved preferences found. Starting fresh.")
+
+# Save user preferences
+def save_preferences():
+    with open("preferences.json", "w") as file:
+        json.dump(user_preferences, file)
+    print("Your preferences have been saved.")
 
 def welcome():
     print("Welcome to the Urban Gardening Assistant!")
@@ -73,6 +90,7 @@ def get_user_preferences():
     user_preferences['sunlight'] = input("Amount of sunlight (Full Sun, Partial Shade, Shade): ").capitalize()
     user_preferences['space'] = input("Type of space (Balcony, Windowsill, Rooftop, Indoor): ").capitalize()
     user_preferences['plant_type'] = input("Preferred plant types (Flowers, Herbs, Vegetables, Succulents): ").capitalize()
+    save_preferences()
     print("Preferences saved!")
 
 def plant_recommendations():
@@ -131,11 +149,14 @@ def view_favorites():
 def exit_program():
     confirm = input("Are you sure you want to exit? (y/n): ").lower()
     if confirm == 'y':
+        save_preferences()
         print("Thank you for using the Urban Gardening Assistant!")
         sys.exit()
     else:
         print("Returning to main menu.")
 
+# Load preferences at the start of the application
+load_preferences()
 
 # Start the application
 welcome()

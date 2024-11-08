@@ -159,10 +159,14 @@ def add_to_favorites(plant):
     Prompts the user to add a plant to their list of favorites.
     If confirmed, the plant is added to the user's favorites list for easy access.
     """
-    add_fav = input(f"Do you want to add {plant['name']} to your favorites? (y/n): ").lower()
-    if add_fav == 'y':
-        user_preferences["favorites"].append(plant)
-        print(f"{plant['name']} has been added to your favorites.")
+    # Avoid duplicating entries
+    if any(fav["name"].lower() == plant["name"].lower() for fav in user_preferences["favorites"]):
+        print(f"{plant['name']} is already in your favorites.")
+    else:
+        add_fav = input(f"Do you want to add {plant['name']} to your favorites? (y/n): ").lower()
+        if add_fav == 'y':
+            user_preferences["favorites"].append(plant)
+            print(f"{plant['name']} has been added to your favorites.")
 
 def view_favorites():
     """

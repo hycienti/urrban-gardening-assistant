@@ -21,6 +21,14 @@ plants_data = {
     ]
 }
 
+def print_available_plants():
+    print("These are the support plans:")
+    for category, plants in plants_data.items():
+        print(f"**{category}**")
+        for plant in plants:
+            print(f"- {plant['name']}")
+        print()
+
 # User preferences storage
 user_preferences = {
     "sunlight": "",
@@ -105,6 +113,7 @@ def plant_recommendations():
     Displays plants that match the user's preferred type and sunlight requirement, allowing them to add plants to favorites.
     """
     print("\nPlant Recommendations:\n")
+    print_available_plants()
     plant_type = user_preferences['plant_type']
     if plant_type and plant_type in plants_data:
         for plant in plants_data[plant_type]:
@@ -119,6 +128,7 @@ def plant_care_instructions():
     Provides general gardening tips to help users maximize their gardening efforts.
     Covers topics like space optimization, eco-friendly pest control, and container gardening.
     """
+    print_available_plants()
     plant_name = input("\nEnter the name of the plant to view care instructions: ").capitalize()
     for plant_list in plants_data.values():
         for plant in plant_list:
